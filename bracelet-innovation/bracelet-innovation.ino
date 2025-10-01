@@ -41,7 +41,7 @@ void scenario(){
 
     // boucle jusqu'à écriture réussie
     while(!writeBlock(blockAddr,"Jean Dupont")){
-        PrintMessageMultiLine("Repassez la carte");
+        PrintMessageMultiLine("Recommencez");
         delay(1000);
         if(!mfrc522.PICC_IsNewCardPresent()) continue;
         mfrc522.PICC_ReadCardSerial();
@@ -58,7 +58,7 @@ void scenario(){
 
     // boucle jusqu'à lecture réussie
     while(!readBlock(blockAddr, nameOnCard)){
-        PrintMessageMultiLine("Repassez la carte");
+        PrintMessageMultiLine("Recommencez");
         delay(1000);
         if(!mfrc522.PICC_IsNewCardPresent()) continue;
         mfrc522.PICC_ReadCardSerial();
@@ -87,7 +87,7 @@ void scenario(){
     mfrc522.PICC_ReadCardSerial();
 
     while(!writeBlock(blockAddr,"Alice Martin")){
-        PrintMessageMultiLine("Repassez la carte");
+        PrintMessageMultiLine("Recommencez");
         delay(1000);
         if(!mfrc522.PICC_IsNewCardPresent()) continue;
         mfrc522.PICC_ReadCardSerial();
@@ -104,7 +104,7 @@ void scenario(){
 
     // boucle jusqu'à lecture réussie
     while(!readBlock(blockAddr, nameOnCard)){
-        PrintMessageMultiLine("Repassez la carte");
+        PrintMessageMultiLine("Recommencez");
         delay(1000);
         if(!mfrc522.PICC_IsNewCardPresent()) continue;
         mfrc522.PICC_ReadCardSerial();
